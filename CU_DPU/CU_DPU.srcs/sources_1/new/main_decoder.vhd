@@ -8,7 +8,7 @@ entity main_decoder is
        alusrc:              out STD_LOGIC;
        jump:                out STD_LOGIC;
        memread, memwrite:   out STD_LOGIC;
-       regread, regwrite:   out STD_LOGIC;
+       regdst, regwrite:   out STD_LOGIC;
        alucontrol:          out  STD_LOGIC_VECTOR(3 downto 0));
 end main_decoder;
 
@@ -37,7 +37,7 @@ begin
           when "00100001" => controls <= "1010010011"; -- ld
           when "00100010" => controls <= "1001000011"; -- St
           when "00100011" => controls <= "1000010011"; -- li
-          when "00110001" => controls <= "0100000000"; -- jmp
+          when "00110001" => controls <= "0100001101"; -- jmp
           when "01000001" => controls <= "0000110011"; -- mov
           when others     => controls <= "----------"; -- illegal op
         end case;
@@ -47,7 +47,7 @@ begin
       jump          <= controls(8);
       memread       <= controls(7);
       memwrite      <= controls(6);
-      regread       <= controls(5);
+      regdst       <= controls(5);
       regwrite      <= controls(4);
       alucontrol    <= controls(3 downto 0);
 

@@ -7,7 +7,7 @@ entity control_unit is
            zero:               in  STD_LOGIC;
            memread, memwrite:  out STD_LOGIC;
            pcsrc, alusrc:      out STD_LOGIC;
-           regread, regwrite:  out STD_LOGIC;
+           regdst, regwrite:  out STD_LOGIC;
            jump:               out STD_LOGIC;
            alucontrol:         out STD_LOGIC_VECTOR(3 downto 0));
 end control_unit;
@@ -18,11 +18,11 @@ architecture Behavioral of control_unit is
            alusrc:              out STD_LOGIC;
            jump:                out STD_LOGIC;
            memread, memwrite:   out STD_LOGIC;
-           regread, regwrite:   out STD_LOGIC;
+           regdst, regwrite:   out STD_LOGIC;
            alucontrol:          out  STD_LOGIC_VECTOR(3 downto 0));
     end component;
     
 begin
-    main_dc: main_decoder port map( op=>op, alusrc=>alusrc, jump=>jump, memread=>memread, memwrite=>memwrite, regread=>regread, regwrite=>regwrite, alucontrol=>alucontrol);  --regdst=>regdst
+    main_dc: main_decoder port map( op=>op, alusrc=>alusrc, jump=>jump, memread=>memread, memwrite=>memwrite, regdst=>regdst, regwrite=>regwrite, alucontrol=>alucontrol);  --regdst=>regdst
 
 end Behavioral;
