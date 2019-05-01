@@ -6,21 +6,21 @@
     var2: 98
 
 .code
-    li %r1, 56      // r1 = 56
-    li %r2, 72       // r2 = 72
+    li %r1, 56              // r1 = 72
+    li %r2, 72              // r2 = 56
 
-    and %r3, %r1, %r2
-    or %r3, %r1, %r2
-    xor %r3, %r1, %r2
-    add %r3, %r1, %r2       // add rr, rr, rr
-    mul %r3, %r1, %r2
+    and %r3, %r1, %r2       // 72&56 = 8
+    or %r3, %r1, %r2        // 72|56 = 120
+    xor %r3, %r1, %r2       // 72^56 = 112
+    add %r3, %r1, %r2       // 72+56 = 128
+    mul %r3, %r1, %r2       // 72*56 = 4032
     //div %r3, %r1, %r2
     //mod %r3, %r1, %r2
-    nand %r3, %r1, %r2
-    nor %r3, %r1, %r2
-    sub %r3, %r1, %r2       // sub rr, rr, rr
+    nand %r3, %r1, %r2      // ~(72&56) = -9     
+    nor %r3, %r1, %r2       // ~(72|56) = -121
+    sub %r3, %r1, %r2       // 72-56 = 16
     //exp %r3, %r1, %r2
-    slt %r3, %r1, %r2
+    slt %r3, %r1, %r2       
 
     not %r3, %r1
     inc %r3, %r1

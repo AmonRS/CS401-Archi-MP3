@@ -1,3 +1,6 @@
+add beq instruction to assembler, decoder table docx, and the VHDL
+    for the VHDL, add beq inst. and then add the branch mux component :)
+
 ad-hoc asm test program
 algo asm test program
 
