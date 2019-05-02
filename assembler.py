@@ -1,13 +1,13 @@
 import re
 
-asm_file = open('test.asm', 'r')
+asm_file = open('test1.asm', 'r')
 hex_file = open('hex.dat', 'w')
 
 opcodes = {
     'and':'10' , 'or':'11' , 'xor':'12' , 'add':'13' , 'inc':'14' , 'mul':'15' , 'div':'16' , 'mod':'17',
     'nand':'18' , 'nor':'19' , 'not':'1a' , 'sub':'1b' , 'dec':'1c' , 'exp':'1e' , 'slt':'1f',
     'ld':'21' , 'st':'22' , 'li':'23',
-    'jmp':'31',
+    'jmp':'31' , 'beq':'32',
     'mov':'41'
 }
 registers = {
@@ -64,13 +64,19 @@ for line in asm_file:
         # type of instruction ?
         if hexcode[0] == '1':
             # arithmetic op :     + - * / %
-            hexcode = hexcode + registers[l[1]] + registers[l[2]] + registers[l[3]]     # op.rr.rr.rr
+            if len(l)==4:
+                hexcode = hexcode + registers[l[1]] + registers[l[2]] + registers[l[3]]     # op.rr.rr.rr
+            elif len(l)==3:
+                hexcode = hexcode + registers[l[1]] + registers[l[2]] + '00'     # op.rr.rr.rr   (not, inc, dec)
         elif hexcode[0] == '2':
             # data control :    load, store, and load_imm
             hexcode = hexcode + registers[l[1]] + hex(int(l[2]))[2:].zfill(4)       # op.rr.iiii
-        elif hexcode[0] == '3':
+        elif hexcode[0:2] == '31':
             # jump
             hexcode = hexcode + hex(int(l[1]))[2:].zfill(6)        # jp.iiiiii
+        elif hexcode[0:2] == '32':
+            # beq
+            hexcode = hexcode + hex(int(l[1]))[2:].zfill(2) + registers[l[2]] + registers[l[3]]        # bq.ii.rr.rr
         elif hexcode[0] == '4':
             # mov
             hexcode = hexcode + registers[l[1]] + '00' + registers[l[2]]      # mv.r2.--.r1

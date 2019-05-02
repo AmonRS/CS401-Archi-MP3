@@ -22,20 +22,21 @@
     //exp %r3, %r1, %r2
     slt %r3, %r1, %r2       
 
-    not %r3, %r1
-    inc %r3, %r1
-    dec %r3, %r1
+    not %r3, %r1            // ~72 = -73
+    inc %r3, %r1            // 72++ = 73
+    dec %r3, %r1            // 72-- = 71
 
-    mov %r4, %r1
-    mov %r1, %r2
+    mov %r4, %r1            // r4 = 72
+    mov %r1, %r2            // r1 = r2 = 56
 
     xor %r5, %r1, %r2       // should be zero. check if zero flag is set.
 
 
-    jmp 32                  // jmp iiiiii
+    jmp 100                  // jmp iiiiii
 
-    mov %r3, %r1
-    mov %r4, %r2
+    mov %r3, %r1            // r3 = 56
+    mov %r4, %r2            // r4 = 56
 
+    li %r4, 35              // r4 = 35
 
 
