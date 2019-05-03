@@ -13,26 +13,27 @@ entity main_decoder is
        alucontrol:          out  STD_LOGIC_VECTOR(3 downto 0));
 end main_decoder;
 
-architecture Behavioral of main_decoder is
+architecture behave of main_decoder is
     signal controls: STD_LOGIC_VECTOR(10 downto 0);
 begin
       process(op) begin
         case op is
+          when "00000000" => controls <= "10011111111";
           when "00010000" => controls <= "00000110000"; -- And
           when "00010001" => controls <= "00000110001"; -- Or
           when "00010010" => controls <= "00000110010"; -- Xor
           when "00010011" => controls <= "00000110011"; -- Add
           when "00010100" => controls <= "00000110100"; -- Increment
           when "00010101" => controls <= "00000110101"; -- Multiply
-          when "00010110" => controls <= "00000110110"; -- Division
-          when "00010111" => controls <= "00000110111"; -- Modulus
+          --when "00010110" => controls <= "00000110110"; -- Division
+          --when "00010111" => controls <= "00000110111"; -- Modulus
           when "00011000" => controls <= "00000111000"; -- Nand
           when "00011001" => controls <= "00000111001"; -- Nor
           when "00011010" => controls <= "00000111010"; -- Not
           when "00011011" => controls <= "00000111011"; -- Subtract
           when "00011100" => controls <= "00000111100"; -- Decrement
           --when "00011101" => controls <= "00000111101"; -- ---
-          when "00011110" => controls <= "00000111110"; -- Exponential
+          --when "00011110" => controls <= "00000111110"; -- Exponential
           when "00011111" => controls <= "00000111111"; -- Set less than
           
           when "00100001" => controls <= "10010010011"; -- ld
@@ -57,4 +58,4 @@ begin
       regwrite      <= controls(4);
       alucontrol    <= controls(3 downto 0);
 
-end Behavioral;
+end;

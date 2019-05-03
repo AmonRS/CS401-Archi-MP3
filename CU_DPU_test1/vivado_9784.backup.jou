@@ -1,0 +1,435 @@
+#-----------------------------------------------------------
+# Vivado v2018.2.1 (64-bit)
+# SW Build 2288692 on Thu Jul 26 18:24:02 MDT 2018
+# IP Build 2289599 on Thu Jul 26 21:09:20 MDT 2018
+# Start of session at: Thu May  2 22:52:36 2019
+# Process ID: 9784
+# Current directory: Z:/CS-401-1-CompArch/MP3/CU_DPU_test1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8980 Z:\CS-401-1-CompArch\MP3\CU_DPU_test1\CU_DPU.xpr
+# Log file: Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/vivado.log
+# Journal file: Z:/CS-401-1-CompArch/MP3/CU_DPU_test1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.xpr
+update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1
+add_files -norecurse Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/imports/new/memfile_1.dat
+synth_design -rtl -name rtl_1
+add_files -norecurse Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/memfile_1.dat
+synth_design -rtl -name rtl_1
+close_design
+launch_simulation
+source processor_testbench.tcl
+close_sim
+launch_simulation
+source processor_testbench.tcl
+run 40 ns
+run 40 ns
+restart
+run 40 ns
+save_wave_config {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/processor_testbench_behav.wcfg}
+add_files -fileset sim_1 -norecurse Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/processor_testbench_behav.wcfg
+set_property xsim.view Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/processor_testbench_behav.wcfg [get_filesets sim_1]
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} 31
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} -line 31
+restart
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} 31
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} -line 31
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} 32
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} -line 32
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} 33
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} -line 33
+run 40 ns
+close_sim
+launch_simulation
+open_wave_config Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/processor_testbench_behav.wcfg
+source processor_testbench.tcl
+export_ip_user_files -of_objects  [get_files Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/imports/new/memfile_1.dat] -no_script -reset -force -quiet
+remove_files  Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/imports/new/memfile_1.dat
+file delete -force Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/imports/new/memfile_1.dat
+export_ip_user_files -of_objects  [get_files Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/memfile_1.dat] -no_script -reset -force -quiet
+remove_files  Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/memfile_1.dat
+file delete -force Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/memfile_1.dat
+close_sim
+synth_design -rtl -name rtl_1
+add_files -norecurse Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/memfile_1.dat
+synth_design -rtl -name rtl_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+launch_simulation
+open_wave_config Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/processor_testbench_behav.wcfg
+source processor_testbench.tcl
+run 40 ns
+run 50 ns
+restart
+run all
+restart
+run 50 ns
+restart
+run 50 ns
+close_sim
+launch_simulation
+open_wave_config Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/processor_testbench_behav.wcfg
+source processor_testbench.tcl
+close_sim
+close_design
+export_ip_user_files -of_objects  [get_files Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/memfile_1.dat] -no_script -reset -force -quiet
+remove_files  Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/memfile_1.dat
+file delete -force Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/memfile_1.dat
+add_files -norecurse Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/memfile_1.dat
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_simulation
+open_wave_config Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/processor_testbench_behav.wcfg
+source processor_testbench.tcl
+run 50 ns
+run 50 ns
+run 50 ns
+restart
+run 50 ns
+restart
+restart
+restart
+run 50 ns
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} 50
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} -line 50
+save_wave_config {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/processor_testbench_behav.wcfg}
+restart
+run 50 ns
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} 81
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} -line 81
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} 84
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} 81
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} 33
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} -line 33
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} 32
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} -line 32
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} 31
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} -line 31
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} 33
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} -line 33
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} 33
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} -line 33
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} 41
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} -line 41
+restart
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} 50
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} -line 50
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} 48
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} -line 48
+close_sim
+launch_simulation
+open_wave_config Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/processor_testbench_behav.wcfg
+source processor_testbench.tcl
+run all
+run all
+run all
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} 31
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} -line 31
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} 32
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} -line 32
+restart
+run all
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} 31
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} -line 31
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} -line 84
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} -line 81
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} 84
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} 81
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} -line 81
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} 81
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} -line 81
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} 81
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} -line 81
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} 81
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} -line 81
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} 81
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} -line 81
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} 81
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} -line 81
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} -line 84
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} 81
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} -line 81
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} 81
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} -line 81
+close_sim
+launch_simulation
+open_wave_config Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/processor_testbench_behav.wcfg
+source processor_testbench.tcl
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} 81
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} -line 81
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} 81
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} -line 81
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} 84
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} -line 84
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} 84
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} -line 84
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} 84
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} -line 84
+restart
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} 81
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} -line 81
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} 84
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} -line 84
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} 84
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} -line 84
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} 84
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} -line 84
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} 81
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd} -line 81
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} 50
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/registerfile.vhd} -line 50
+run 5 ns
+restart
+run 40 ns
+synth_design -rtl -name rtl_1
+run 40 ns
+close_sim
+launch_simulation
+open_wave_config Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/processor_testbench_behav.wcfg
+source processor_testbench.tcl
+close_sim
+launch_simulation
+open_wave_config Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/processor_testbench_behav.wcfg
+source processor_testbench.tcl
+restart
+run 40 ns
+close_sim
+launch_simulation
+open_wave_config Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/processor_testbench_behav.wcfg
+source processor_testbench.tcl
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+close_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_simulation
+open_wave_config Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/processor_testbench_behav.wcfg
+source processor_testbench.tcl
+restart
+run 40 ns
+restart
+run 40 ns
+close_sim
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sim_1/new/cu_test.vhd w ]
+add_files -fileset sim_1 Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sim_1/new/cu_test.vhd
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top cu_test [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+set_property source_mgmt_mode DisplayOnly [current_project]
+launch_simulation
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top sim_aluimpl [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode DisplayOnly [current_project]
+launch_simulation
+export_ip_user_files -of_objects  [get_files Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sim_1/new/cu_test.vhd] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sim_1/new/cu_test.vhd
+file delete -force Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sim_1/new/cu_test.vhd
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top processor_testbench [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode DisplayOnly [current_project]
+launch_simulation
+open_wave_config Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/processor_testbench_behav.wcfg
+source processor_testbench.tcl
+close_sim
+launch_simulation
+open_wave_config Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/processor_testbench_behav.wcfg
+source processor_testbench.tcl
+restart
+run 40 ns
+restart
+run 40 ns
+close_sim
+launch_simulation
+open_wave_config Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/processor_testbench_behav.wcfg
+source processor_testbench.tcl
+run 40 ns
+restart
+run 40 ns
+close_sim
+refresh_design
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+reset_run synth_1
+launch_simulation
+open_wave_config Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/processor_testbench_behav.wcfg
+source processor_testbench.tcl
+close_sim
+launch_simulation
+open_wave_config Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/processor_testbench_behav.wcfg
+source processor_testbench.tcl
+restart
+run 40 ns
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+close_sim
+launch_simulation
+open_wave_config Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/processor_testbench_behav.wcfg
+source processor_testbench.tcl
+step
+step
+step
+step
+step
+step
+reset_run synth_1
+close_sim
+launch_simulation
+open_wave_config Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/processor_testbench_behav.wcfg
+source processor_testbench.tcl
+restart
+run 40 ns
+close_sim
+launch_simulation
+open_wave_config Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/processor_testbench_behav.wcfg
+source processor_testbench.tcl
+close_sim
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+refresh_design
+launch_simulation
+open_wave_config Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/processor_testbench_behav.wcfg
+source processor_testbench.tcl
+close_sim
+close_design
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_simulation
+open_wave_config Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/processor_testbench_behav.wcfg
+source processor_testbench.tcl
+close_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_simulation
+open_wave_config Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/processor_testbench_behav.wcfg
+source processor_testbench.tcl
+run 40 ns
+restart
+run 40 ns
+close_sim
+close_project
+open_project Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.xpr
+export_ip_user_files -of_objects  [get_files Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/memfile_1.dat] -no_script -reset -force -quiet
+remove_files  Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/memfile_1.dat
+add_files -norecurse Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/memfile_1.dat
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_simulation
+open_wave_config Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/processor_testbench_behav.wcfg
+source processor_testbench.tcl
+close_sim
+export_ip_user_files -of_objects  [get_files Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/memfile_1.dat] -no_script -reset -force -quiet
+remove_files  Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/memfile_1.dat
+file delete -force Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/memfile_1.dat
+add_files -norecurse Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/memfile_1.dat
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_simulation
+open_wave_config Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/processor_testbench_behav.wcfg
+source processor_testbench.tcl
+close_sim
+launch_simulation
+open_wave_config Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/processor_testbench_behav.wcfg
+source processor_testbench.tcl
+add_force {/processor_testbench/dut/imem1/mem[0]} -radix hex {00010000 0ns}
+restart
+run 40 ns
+add_force {/processor_testbench/dut/imem1/mem[0]} -radix hex {23010038 0ns}
+restart
+run 40 ns
+add_force {/processor_testbench/dut/imem1/mem[0]} -radix hex {23010000 0ns}
+restart
+run 40 ns
+add_bp {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/alu.vhd} 33
+restart
+run 40 ns
+remove_bps -file {Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/alu.vhd} -line 33
+restart
+run 40 ns
+run 40 ns
+run 40 ns
+run 40 ns
+run 40 ns
+close_sim
+launch_simulation
+open_wave_config Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/processor_testbench_behav.wcfg
+source processor_testbench.tcl
+restart
+close_sim
+launch_simulation
+open_wave_config Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/processor_testbench_behav.wcfg
+source processor_testbench.tcl
+run 40 ns
+run 40 ns
+run 40 ns
+run 40 ns
+run 40 ns
+run 40 ns
+run 40 ns
+run 40 ns
+run 40 ns
+run 40 ns
+run 40 ns
+run 40 ns
+run 40 ns
+run 40 ns
+restart
+run 100 ns
+close_sim
+launch_simulation
+open_wave_config Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/processor_testbench_behav.wcfg
+source processor_testbench.tcl
+restart
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+close_sim

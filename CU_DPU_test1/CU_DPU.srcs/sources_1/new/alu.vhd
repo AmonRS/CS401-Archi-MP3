@@ -30,7 +30,7 @@ begin
   sum <= a + b2 + alucontrol(3);
   diff <= sum;
   -- mod
-  modd <= std_logic_vector( unsigned(a) mod unsigned(b2) );
+  --modd <= std_logic_vector( unsigned(a) mod unsigned(b2) );
   -- mul , div , power
   mul <= (a * b);
   --div<=a;--div <= (a / b);

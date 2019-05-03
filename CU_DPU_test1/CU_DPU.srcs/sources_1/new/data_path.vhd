@@ -52,6 +52,12 @@ architecture Behavioral of data_path is
             y: out STD_LOGIC_VECTOR(width-1 downto 0));
     end component;
     
+    -- The datapath needs a shift left by 2 component for address computations
+    component sl2 generic(width: integer);
+    port(a: in  STD_LOGIC_VECTOR(width-1 downto 0);
+         y: out STD_LOGIC_VECTOR(width-1 downto 0));
+    end component;
+    
     -- flip-flop register (for program counter etc.)
     component flopr generic(width: integer);
         port(clk, reset: in  STD_LOGIC;
@@ -84,7 +90,7 @@ begin
     pcjump <= pcplus4((width-1) downto (width-4)) & instr((width-7) downto 0) & "00";
     pcreg:  flopr generic map(width) port map(clk => clk, reset => reset, d => pcnext, q => pc);
     pcadd1: adder generic map(width) port map(a => pc, b => four, y => pcplus4);
-    --immsh:    sl2 generic map(width) port map(a => signimm, y => signimmsh);
+    immsh:    sl2 generic map(width) port map(a => signimm, y => signimmsh);
     pcadd2: adder generic map(width) port map(a => pcplus4, b => signimmsh, y => pcbranch);
     pcbrmux: mux2 generic map(width) port map(d0 => pcplus4, d1 => pcbranch, s => pcsrc, y => pcnextbr);
     pcmux:   mux2 generic map(width) port map(d0 => pcnextbr, d1 => pcjump, s => jump, y => pcnext);
@@ -103,7 +109,7 @@ begin
     -- select between alu output and data read from memory	
 	resmux: mux2 generic map(width) port map( d0 => aluout, d1 => readdata, 
 	                                           s => memread, y => result);
-	
+                                                
 	-- sign extend immediate data
 	se: signext generic map(width) port map( a => instr(((width/2)-1) downto 0), y => signimm);
 
