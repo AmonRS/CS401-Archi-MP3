@@ -16,7 +16,8 @@ entity regfile is
        --ra1, ra2, wa3: in  STD_LOGIC_VECTOR( (integer(ceil(log2(real(width))))-1) downto 0);
        ra1, ra2, wa3: in  STD_LOGIC_VECTOR( 7 downto 0);
        wd3:           in  STD_LOGIC_VECTOR((width-1) downto 0);
-       rd1, rd2:      out STD_LOGIC_VECTOR((width-1) downto 0));
+       rd1, rd2:      out STD_LOGIC_VECTOR((width-1) downto 0);
+       insld:         in  STD_LOGIC_VECTOR(7 downto 0));
 end;
 
 architecture behave of regfile is
@@ -38,16 +39,16 @@ begin
   -- read mem from two separate ports 1 and 2 
   -- addresses are in ra1 and ra2
   process(ra1, ra2, mem) begin
-    if ( to_integer(unsigned(ra1)) = 0) then 
-		rd1 <= (others => '0'); -- register 0 holds 0
+    if ( to_integer(unsigned(ra1)) /= 0) and (to_integer(unsigned(insld))/=35) then 
+        rd1 <= mem(to_integer(unsigned(ra1)));
     else 
-		rd1 <= mem(to_integer(unsigned(ra1)));
+		rd1 <= (others => '0'); -- register 0 holds 0
     end if;
 	
-    if ( to_integer(unsigned(ra2)) = 0) then 
-		rd2 <= (others => '0'); -- register 0 holds 0
+    if ( to_integer(unsigned(ra2)) /= 0) and (to_integer(unsigned(insld))/=35) then 
+        rd2 <= mem(to_integer( unsigned(ra2)));
     else 
-		rd2 <= mem(to_integer( unsigned(ra2)));
+		rd2 <= (others => '0'); -- register 0 holds 0
     end if;
   end process;
 end;

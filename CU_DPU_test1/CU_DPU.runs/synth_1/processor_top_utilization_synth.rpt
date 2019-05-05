@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2.1 (win64) Build 2288692 Thu Jul 26 18:24:02 MDT 2018
-| Date         : Fri May  3 02:56:59 2019
-| Host         : LAB-SCI-214-12 running 64-bit major release  (build 9200)
+| Date         : Sun May  5 15:23:55 2019
+| Host         : LAB-SCI-304-13 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file processor_top_utilization_synth.rpt -pb processor_top_utilization_synth.pb
 | Design       : processor_top
 | Device       : 7a100tcsg324-1
@@ -27,20 +27,18 @@ Table of Contents
 1. Slice Logic
 --------------
 
-+----------------------------+------+-------+-----------+-------+
-|          Site Type         | Used | Fixed | Available | Util% |
-+----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                |  481 |     0 |     63400 |  0.76 |
-|   LUT as Logic             |  401 |     0 |     63400 |  0.63 |
-|   LUT as Memory            |   80 |     0 |     19000 |  0.42 |
-|     LUT as Distributed RAM |   80 |     0 |           |       |
-|     LUT as Shift Register  |    0 |     0 |           |       |
-| Slice Registers            |    8 |     0 |    126800 | <0.01 |
-|   Register as Flip Flop    |    8 |     0 |    126800 | <0.01 |
-|   Register as Latch        |    0 |     0 |    126800 |  0.00 |
-| F7 Muxes                   |    0 |     0 |     31700 |  0.00 |
-| F8 Muxes                   |    0 |     0 |     15850 |  0.00 |
-+----------------------------+------+-------+-----------+-------+
++-------------------------+------+-------+-----------+-------+
+|        Site Type        | Used | Fixed | Available | Util% |
++-------------------------+------+-------+-----------+-------+
+| Slice LUTs*             |   24 |     0 |     63400 |  0.04 |
+|   LUT as Logic          |   24 |     0 |     63400 |  0.04 |
+|   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
+| Slice Registers         |    7 |     0 |    126800 | <0.01 |
+|   Register as Flip Flop |    7 |     0 |    126800 | <0.01 |
+|   Register as Latch     |    0 |     0 |    126800 |  0.00 |
+| F7 Muxes                |    0 |     0 |     31700 |  0.00 |
+| F8 Muxes                |    0 |     0 |     15850 |  0.00 |
++-------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
 
@@ -57,7 +55,7 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
-| 8     |          Yes |           - |        Reset |
+| 7     |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
 | 0     |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
@@ -79,12 +77,11 @@ Table of Contents
 3. DSP
 ------
 
-+----------------+------+-------+-----------+-------+
-|    Site Type   | Used | Fixed | Available | Util% |
-+----------------+------+-------+-----------+-------+
-| DSPs           |    3 |     0 |       240 |  1.25 |
-|   DSP48E1 only |    3 |       |           |       |
-+----------------+------+-------+-----------+-------+
++-----------+------+-------+-----------+-------+
+| Site Type | Used | Fixed | Available | Util% |
++-----------+------+-------+-----------+-------+
+| DSPs      |    0 |     0 |       240 |  0.00 |
++-----------+------+-------+-----------+-------+
 
 
 4. IO and GT Specific
@@ -149,20 +146,14 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT6     |  178 |                 LUT |
-| LUT2     |  115 |                 LUT |
-| RAMD32   |   72 |  Distributed Memory |
-| LUT3     |   60 |                 LUT |
-| LUT5     |   55 |                 LUT |
-| RAMS64E  |   32 |  Distributed Memory |
 | OBUF     |   32 |                  IO |
-| RAMS32   |   24 |  Distributed Memory |
-| CARRY4   |   24 |          CarryLogic |
-| LUT1     |   16 |                 LUT |
-| LUT4     |   11 |                 LUT |
-| FDCE     |    8 |        Flop & Latch |
-| DSP48E1  |    3 |    Block Arithmetic |
+| LUT1     |   11 |                 LUT |
+| LUT6     |   10 |                 LUT |
+| FDCE     |    7 |        Flop & Latch |
+| CARRY4   |    4 |          CarryLogic |
+| LUT5     |    3 |                 LUT |
 | IBUF     |    2 |                  IO |
+| LUT4     |    1 |                 LUT |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 
@@ -172,8 +163,6 @@ Table of Contents
 
 +----------+------+
 | Ref Name | Used |
-+----------+------+
-| sl2      |    1 |
 +----------+------+
 
 

@@ -33,6 +33,7 @@ architecture Behavioral of data_path is
     component regfile generic(width: integer);
     port(clk:           in  STD_LOGIC;
        we3:           in  STD_LOGIC;
+       insld:         in  STD_LOGIC_VECTOR(7 downto 0);
        -- determine number of address bits based on generic width component
        --ra1, ra2, wa3: in  STD_LOGIC_VECTOR( (integer(ceil(log2(real(width))))-1) downto 0);
        ra1, ra2, wa3: in  STD_LOGIC_VECTOR( 7 downto 0);
@@ -100,7 +101,8 @@ begin
 	                                       ra1 => instr(15 downto 8), 
 	                                       ra2 => instr(7 downto 0),
 										   wa3 => writereg, wd3 => result, 
-										   rd1 => srca, rd2 => writedata);
+										   rd1 => srca, rd2 => writedata,
+										   insld=>instr(31 downto 24));
 
 	-- select destination register based on regdst signal
 	wrmux: mux2 generic map(8) port map( d0 => instr(23 downto 16), d1 => instr(23 downto 16),
