@@ -1,2 +1,2 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/mem_instructions.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity imem
+INFO: [VRFC 10-163] Analyzing VHDL file "Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/data_path.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity data_path

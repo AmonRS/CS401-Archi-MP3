@@ -34,10 +34,21 @@
 
     jmp 80                  // jmp iiiiii
 
-    li %r1, 40            // r3 = 56
+    li %r3, 40            // r3 = 56
     li %r4, 39            // r4 = 56
 
     li %r4, 17              // r4 = 35
     xor %r5, %r1, %r2
+
+
+    beq 96, %r1, %r2
+
+    li %r4, 3
+
+    add %r6, %r1, %r2
+
+
+    
+    
 
 

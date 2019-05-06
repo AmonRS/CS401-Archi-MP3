@@ -76,7 +76,7 @@ architecture Behavioral of data_path is
     
     -- The signals to wire the datapath components together
     signal writereg: STD_LOGIC_VECTOR(7 downto 0);
-    signal pcjump, pcnext, pcnextbr, pcplus4, pcbranch: STD_LOGIC_VECTOR((width-1) downto 0);
+    signal pcjump, pcnext, pcnextbr, pcplus4, pcbranch, pcbranchthing: STD_LOGIC_VECTOR((width-1) downto 0);
     signal signimm, signimmsh: STD_LOGIC_VECTOR((width-1) downto 0);
     signal srca, srcb, result: STD_LOGIC_VECTOR((width-1) downto 0);
     signal const_zero: STD_LOGIC_VECTOR((width-1) downto 0) := (others => '0');
@@ -90,11 +90,12 @@ begin
     -- next PC logic
     --pcjump <= pcplus4((width-1) downto (width-4)) & "00" & instr((width-7) downto 0);-- & "00";
     pcjump <= "0000" & "0000" & instr((width-9) downto 0);-- & "00";
+    pcbranchthing <= "00000000"&"00000000"&"00000000"&instr(23 downto 16);
     pcreg:  flopr generic map(width) port map(clk => clk, reset => reset, d => pcnext, q => pc);
     pcadd1: adder generic map(width) port map(a => pc, b => four, y => pcplus4);
     immsh:    sl2 generic map(width) port map(a => signimm, y => signimmsh);
     pcadd2: adder generic map(width) port map(a => pcplus4, b => signimmsh, y => pcbranch);
-    pcbrmux: mux2 generic map(width) port map(d0 => pcplus4, d1 => pcbranch, s => pcsrc, y => pcnextbr);
+    pcbrmux: mux2 generic map(width) port map(d0 => pcplus4, d1 => pcbranchthing, s => pcsrc, y => pcnextbr);
     pcmux:   mux2 generic map(width) port map(d0 => pcnextbr, d1 => pcjump, s => jump, y => pcnext);
 
 	-- register file logic

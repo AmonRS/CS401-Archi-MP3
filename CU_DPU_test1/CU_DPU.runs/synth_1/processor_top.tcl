@@ -17,8 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -31,7 +29,7 @@ set_property target_language VHDL [current_project]
 set_property board_part digilentinc.com:nexys4_ddr:part0:1.1 [current_project]
 set_property ip_output_repo z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_mem Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/memfile_6.dat
+read_mem Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/memfile_7.dat
 read_vhdl -library xil_defaultlib {
   Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/adder.vhd
   Z:/CS-401-1-CompArch/MP3/CU_DPU_test1/CU_DPU.srcs/sources_1/new/alu.vhd
