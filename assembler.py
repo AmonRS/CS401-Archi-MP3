@@ -46,7 +46,7 @@ for line in asm_file:
     # data segment
     if part_of_code==1:
         labels[line[0:line.index(':')]] = [ hex(mem_adr)[2:] , [i for i in line[line.index(':')+1:].split(' ') if i != ''] ]
-        mem_adr += 4 * len(labels[line[0:line.index(':')]][1])
+        #mem_adr += 4 * len(labels[line[0:line.index(':')]][1])
 
     # code segment
     if part_of_code==2:
