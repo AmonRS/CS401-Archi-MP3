@@ -23,7 +23,13 @@ end;
 architecture behave of regfile is
   type ramtype is array ((width-1) downto 0) of STD_LOGIC_VECTOR((width-1) downto 0);
   signal mem: ramtype;
+  
+  signal ra11, ra22:         STD_LOGIC_VECTOR( 4 downto 0 );
+  
 begin
+    ra11 <= ra1 (4 downto 0);
+    ra22 <= ra2 (4 downto 0);
+
   -- three-ported register file
   
   -- write to the third port on rising edge of clock
@@ -38,15 +44,15 @@ begin
   
   -- read mem from two separate ports 1 and 2 
   -- addresses are in ra1 and ra2
-  process(ra1, ra2, mem) begin
+  process(ra11, ra22, mem) begin
     if (to_integer(unsigned(instr(31 downto 24)))/=35) and (to_integer(unsigned(instr(31 downto 24)))/=49) then
-        if ( to_integer(unsigned(ra1)) /= 0) then 
+        if ( to_integer(unsigned(ra11)) /= 0) then 
             rd1 <= mem(to_integer(unsigned(ra1)));
         else 
             rd1 <= (others => '0'); -- register 0 holds 0
         end if;
         
-        if ( to_integer(unsigned(ra2)) /= 0) then 
+        if ( to_integer(unsigned(ra22)) /= 0) then 
             rd2 <= mem(to_integer( unsigned(ra2)));
         else 
             rd2 <= (others => '0'); -- register 0 holds 0
